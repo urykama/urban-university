@@ -40,15 +40,10 @@ class Cafe():
         for name in range(1, 21):
             time.sleep(0.3)
             customer = Customer(name=str(name), args=(self.queue,))
-            self.visitors.append(customer)
+            visitors.append(customer)
             print(f'\033[36mПосетитель номер {customer.name} прибыл.')
             self.queue.put(customer)
             self.serve_customer()
-        print('\033[38mВсе гости прибыли')
-        for visitor in self.visitors:
-            print('\033[38mВсе гости прибыли', visitor.name, visitor)
-            visitor.join()
-        print('\033[38mочередь пуста')
 
     # Метод serve_customer(self, customer) - моделирует обслуживание посетителя.
     def serve_customer(self):
@@ -77,10 +72,17 @@ if __name__ == '__main__':
     customer_arrival_thread = threading.Thread(target=cafe.customer_arrival)
     customer_arrival_thread.start()
 
-    # # Ожидаем завершения работы прибытия посетителей
     customer_arrival_thread.join()
 
-if __name__ != '__main__':
+    visitors = []
+    print('\033[38mВсе гости прибыли')
+    for visitor in visitors:
+        print('\033[38mВсе гости прибыли', visitor.name, visitor)
+        visitor.join()
+    print('\033[38mочередь пуста')
+    # # Ожидаем завершения работы прибытия посетителей
+
+if __name__ == '__main__':
     queue = queue.Queue()
     # queue.put(1)
     pr_list = []
