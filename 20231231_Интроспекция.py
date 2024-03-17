@@ -22,3 +22,5 @@ if __name__ == '__main__':
     pprint.pprint(introspection_info(introspection_info))
     print()
     pprint.pprint(introspection_info())
+
+# indent Rainbow

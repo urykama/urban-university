@@ -9,6 +9,7 @@ for x in (150, 175, 225, 250):
     cv2.line(img, (x, 150), (x, 200), (255, 0, 0), 3)
 for x in (150, 225):
     cv2.line(img, (x, 150), (x + 25, 150), (0, 0, 255), 3)
+cv2.rectangle(img, (50, 50), (200, 200), (0, 0, 255))
 
 cv2.imshow('Photo', img)
 cv2.waitKey(0)

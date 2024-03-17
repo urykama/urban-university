@@ -1,9 +1,9 @@
 import requests
 import logging
+
+
 # закоментированно и изменено, чтобы логи были как в задании
 # логи ошибок переделывать не стал, сорян
-
-
 log_200 = logging.getLogger('RequestsLogger')
 log_200.setLevel(logging.INFO)
 log_200_fh = logging.FileHandler('success_responses.log', 'w', 'utf-8')
@@ -28,14 +28,8 @@ log_error_formatter = logging.Formatter('%(message)s')
 log_error_fh.setFormatter(log_error_formatter)
 log_error.addHandler(log_error_fh)
 
-sites = ['https://www.youtube.com', 'https://instagram.com', 'https://wikipedia.org',
-         'https://yahoo.com', 'https://yandex.ru', 'https://whatsapp.com', 'https://twitter.com',
-         'https://amazon.com', 'https://tiktok.com', 'https://www.ozon.ru']
-# sites = ['https://www.youtube.com', 'https://instagram.com', 'https://wikipedia.org',]
 
-for i in range(len(sites)):
-    site = sites[i]
-    print(f'{i + 1} из {len(sites)} \t {site}')
+def respond(site):
     try:
         response = requests.get(site, timeout=3)
         if response.status_code == 200:
@@ -53,3 +47,18 @@ for i in range(len(sites)):
     except:
         # log_error.exception(f'Не удалось получить ответ от сайта: {site}')
         log_error.exception(f'ERROR: {site}, NO CONNECTION')
+
+
+def run(sites):
+    for i in range(len(sites)):
+        site = sites[i]
+        print(f'{i + 1} из {len(sites)} \t {site}')
+        respond(site)
+
+
+if __name__ == '__main__':
+    sites = ['https://www.youtube.com', 'https://instagram.com', 'https://wikipedia.org',
+             'https://yahoo.com', 'https://yandex.ru', 'https://whatsapp.com', 'https://twitter.com',
+             'https://amazon.com', 'https://tiktok.com', 'https://www.ozon.ru']
+    # sites = ['https://www.youtube.com', 'https://instagram.com', 'https://wikipedia.org',]
+    run(sites)
