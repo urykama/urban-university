@@ -26,7 +26,7 @@ img_contours = cv2.cvtColor(img_contours_gray, cv2.COLOR_GRAY2BGR)
 sel_countours_b = []
 sel_countours_g = []
 sel_countours_r = []
-for j in range(10):
+for j in range(1, 10):
     sel_countours_b.append(contours[j])
 cv2.drawContours(img_contours, sel_countours_b, -1, (0, 0, 255), 1)  # отобразим контуры
 for j in range(10, 20):
