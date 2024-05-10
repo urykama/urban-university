@@ -10,7 +10,21 @@ class Building:  # Создайте новый класс Buiding
 # lemmings = []
 # for i in range(1, 41):  # В цикле создайте 40 объектов класса Building
 while Building.total < 40:
-    lemming = Building(13)
-    # lemmings.append(lemming)
-    # print(lemming)  # и выведите их на экран командой print
-    print('This is lemming number', lemming.num)
+    house = Building()
+    print('This is House number', house.num)
+
+
+# dom1 = Building()
+# dom2 = Building()
+# dom3 = Building()
+# doma = [dom1, dom2, dom3]
+# for i in doma:
+#     print(i.total)
+# print()
+# dom1.total = 'Свой тотал'
+# for i in doma:
+#     print(i.total)
+# print()
+# Building.total = 'change total'
+# for i in doma:
+#     print(i.total)

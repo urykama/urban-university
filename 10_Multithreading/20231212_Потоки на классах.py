@@ -8,7 +8,7 @@ class Knight(Thread):
         self.name = name
         self.skill = skill
         self.color = color
-        self.day = 0
+        self.day = 1
 
     def run(self) -> None:
         print(f'{self.color}Sir {self.name}, на нас напали!')
@@ -17,7 +17,7 @@ class Knight(Thread):
             self.day += 1
             print(f'{self.color}Sir {self.name}, сражается {self.day} день(дня)..., осталось {i} воинов.')
 
-        print(f'{self.color}Sir {self.name}, одержал победу спустя 5 дней!')
+        print(f'{self.color}Sir {self.name}, одержал победу спустя {self.day} дней!')
 
 
 knight1 = Knight("Sir Lancelot", 10, '\033[31m')  # Низкий уровень умения
