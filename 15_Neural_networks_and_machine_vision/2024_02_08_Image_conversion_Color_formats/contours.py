@@ -1,7 +1,5 @@
 import cv2
 import numpy as np
-import math
-import os
 
 my_photo = cv2.imread('image/color_text.jpg')
 
@@ -40,4 +38,3 @@ cv2.imshow('res', img_contours)  # выводим итоговое изобра�
 
 cv2.waitKey()
 cv2.destroyAllWindows()
-
