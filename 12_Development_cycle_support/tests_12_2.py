@@ -71,7 +71,8 @@ class TournamentTest(unittest.TestCase):
         tournament = Tournament(90, self.runner2, self.runner3)
         result = tournament.start()
         self.all_results.append(result)
-        self.assertTrue(result[2] == self.runner3)
+        # self.assertTrue(result[2] == self.runner3)
+        self.assertEquals(result[2], self.runner3)
 
     def test_3(self):
         tournament = Tournament(2, self.runner1, self.runner2, self.runner3)
